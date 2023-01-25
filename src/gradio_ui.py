@@ -167,6 +167,7 @@ def build_gradio_ui_for(inference_fn, for_kobold):
                     outputs=[
                         message, history_for_model, history_for_gradio, chatbot
                     ],
+                    api_name="Send Message"
                 )
 
                 regenerate_btn = gr.Button("Regenerate")
@@ -186,6 +187,7 @@ def build_gradio_ui_for(inference_fn, for_kobold):
                     fn=_undo_last_exchange,
                     inputs=[history_for_model, history_for_gradio],
                     outputs=[history_for_model, history_for_gradio, chatbot],
+                    api_name = "Undo last exchange"
                 )
                 
             with gr.Row():
